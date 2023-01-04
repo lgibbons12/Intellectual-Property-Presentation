@@ -1,0 +1,245 @@
+<html>
+  <head>
+    <title>International Penguins (IPs)</title>
+  </head>
+
+  <body>
+    <style>
+      #background {
+        position: absolute;
+        top: 93px;
+        left: 69px;
+        width: 379px;
+        height: 65px;
+        background-color: transparent;
+      }
+      .gov {
+        position: absolute;
+        background-color: white;
+        color: black;
+        padding: 5px 5px 5px 5px;
+      }
+      #trade-secrets {
+        top: 300px;
+        left: 20px;
+        color: ;
+      }
+      #copyright {
+        top: 300px;
+        left: 160px;
+      }
+      #trademark {
+        top: 300px;
+        left: 280px;
+      }
+      #patent {
+        top: 300px;
+        left: 410px;
+      }
+      div {
+        position: absolute;
+        left: 40em;
+        top: 5em;
+        width: 50em;
+        border: solid lightblue 10px;
+        padding: 5px 5px 5px 5px;
+      }
+      h2 {
+        position: absolute;
+        top: 0px;
+        left: 40em;
+      }
+      img {
+        width: 500px;
+      }
+      #gov-acts {
+        position: absolute;
+        top: 215px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        color: white;
+        background-color: darkblue;
+      }
+      #opponents {
+        background-color: transparent;
+        position: absolute;
+        top: 210px;
+        left: 210px;
+        width: 80px;
+        height: 40px;
+        border: transparent;
+      }
+      #supporters {
+        background-color: transparent;
+        position: absolute;
+        top: 170px;
+        left: 350px;
+        width: 100px;
+        height: 40px;
+        border: transparent;
+      }
+      #Start {
+        height: 300px;
+        width: 100px;
+        position: absolute;
+        top: 200px;
+        left: 30px;
+        background-color: darkgray;
+        color: white;
+      }
+      p {
+        width: 600px;
+        font-weight: bold;
+      }
+      #ip {
+        position: absolute;
+        width: 600px;
+        left: 600px;
+        top: 0px;
+      }
+      #conclusion {
+        position: absolute;
+        width: 200px;
+        left: 150px;
+        top: 500px;
+        background-color: black;
+        color: white;
+      }
+      footer {
+        position: absolute;
+        top: 580px;
+      }
+    </style>
+
+    <h1>International Penguins (IPs)</h1>
+
+    <p>
+      IP or Intellectual Property is a new topic that has come up time and time
+      again as the internet grows. IP is the protected property of an idea, and
+      that protection prevents other people from using that idea without
+      compensating the owner of the IP. In this graphic, you can click on the
+      penguins, which represent how different governmental protections interact
+      with IPs. The mafia group International Penguins has kept a close eye on
+      IP activity, and if you want to enter into the madness, click below.
+    </p>
+    <button id="Start">Enter the Bar</button>
+    <img
+      id="ip"
+      src="https://cdn.glitch.global/bee9abdd-c0a9-4b32-8ac6-64b30eb9b01f/ip.png?v=1660867379692"
+    />
+
+    <!-- Create the image and all buttons -->
+    <button id="background"></button>
+    <img
+      id="cool"
+      src="https://cdn.glitch.global/bee9abdd-c0a9-4b32-8ac6-64b30eb9b01f/penguin_mafia.png?v=1660864350123"
+    />
+    <button class="gov" id="trade-secrets">Trade Secrets</button>
+    <button class="gov" id="copyright">Copyright</button>
+    <button class="gov" id="trademark">Trademark</button>
+    <button class="gov" id="patent">Patent</button>
+    <button id="conclusion">Conclusion</button>
+    <button id="gov-acts">FBI</button>
+    <button id="opponents"></button>
+    <button id="supporters"></button>
+
+    <!-- Open div and heading that we will use JQuery to change based on user input-->
+    <h2></h2>
+    <div></div>
+
+    <footer>
+      <a
+        href="https://docs.google.com/document/d/1_JKZAXl_3sjbdRXUuJKOv0Ru_PI0OLEob3rLMiPnOik/edit?usp=sharing"
+        >Works Cited</a
+      >
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+      $("#cool").hide();
+      $("button").hide();
+      $("#Start").show();
+      //edit div based on what user clicks
+      $("div").hide();
+      $("h2").hide();
+
+      $("#Start").on("click", function () {
+        $("p").hide(1000);
+        $("#ip").hide(1000);
+        $("#Start").css("width", "0").css("height", "0").css("left", "5000");
+        $("#cool").show(1000);
+        $("button").show(1000);
+      });
+      //background info
+      $("#background").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "IP or Intellectual Property is a new topic that has come up time and time again as the internet grows. IP is the protected property of an idea, and that protection prevents other people from using that idea without compensating the owner of the IP. In this graphic, you can click on the penguins, which represent how different governmental protections interact with IPs."
+        );
+        $("h2").show(1000).text("Background Info");
+      });
+
+      //government actions
+      $("#gov-acts").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "I am the security guard, and help keep good rapport with the government. The government has had some influence into the world of IPs. The Digital Millennium Copyright Act 1998 tried to stop the distribution of content protected by Digital Rights Management (DRMs), but it has not stopped it effectively. In May 2011 the PIPA Act tried to stop websites illegally using copyrighted material. Then, in October of the same year, the Stop Online Piracy Act tried to help combat stealing of intellectual property by increases punishments for stealing and introducing stricter regulations on search engines. "
+        );
+        $("h2").show(1000).text("Governmental Actions");
+      });
+
+      //trade secrets
+      $("#trade-secrets").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "Hi, I am the trade secrets penguin. I keep things on the down low here at the agency, and if anyone lets something slip, I’ll be the first to know. I am a small layer of protection someone could use to protect their IP. For example, if someone created a new coding package and only them and a couple people at their company knows how to access the package and what it does, that creator could file for me. This would make the spreading of this “secret” punishable by law, which can help prevent the creator’s intellectual property from spreading. Additionally, I can only really punish people if the creator has signed agreements with all others who know, and if keeping the IP secret will benefit the creator in some way. I protect you less than the other penguins, but I can help keep secrets locked away."
+        );
+        $("h2").show(1000).text("Trade Secrets");
+      });
+      $("#opponents").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "I am an opponent to IPs. I think that free speech should allow people to copy and reuse anything they want. That is the major issue now as big companies want to gain protection. However, I say that too many intellectual property protections infringes on my First Amendment rights"
+        );
+        $("h2").show(1000).text("Opponents to IPs");
+      });
+      $("#supporters").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "I am a supporter of IPs. I believe that they are used in order to prevent stealing and reward works of art and other creations. Additionally, if there were no laws protecting ideas, everyone would just borrow from each other and there would be no innovation. This gives people a reason to invest in research and development and create better and more efficient ideas and products."
+        );
+        $("h2").show(1000).text("Supporters of IPs");
+      });
+      $("#copyright").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "Hi, I am the copyright penguin. I give all the people here their baseline protection. I can protect any creation that the government deems “original”. Once I give someone protection, they are the only person that can reproduce or add onto their work. I do not infringe on First Amendment rights because I simply guard people’s creations like code, not specific facts or ideas."
+        );
+        $("h2").show(1000).text("Copyright");
+      });
+      $("#trademark").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "Hi, I am the trademark penguin. I help protect people once they want to sell their code or creations. I can make sure no one else uses their name or logos for their softwares and projects, so I keep the PR of the group safe and protected."
+        );
+        $("h2").show(1000).text("Trademark");
+      });
+      $("#patent").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "Hi, I am the patent penguin. I protect specifically new ideas that are deemed novel and non-obvious. For example, I helped out Jeff Bezos one time in securing him a patent for 1-click purchasing at Amazon. I prevent other people from using the ideas of my clients, and help keep what happens in the group within the group."
+        );
+        $("h2").show(1000).text("Patent");
+      });
+      $("#conclusion").on("click", function () {
+        $("div").show(1000);
+        $("div").text(
+          "In conclusion, I support IPs to a certain extent, but they must have boundaries. Coding programs are built off of open source, collaboration, and creation. If we begin to protect too many things, that will be lost, and the nature of coding will turn competitive. In general, patents, trademarks, copyright, and trade secrets are great tools to protect creators, but in the world of computer science, the government should be wary about creating too many barriers for open source programs and collaboration."
+        );
+        $("h2").show(1000).text("Conclusion");
+      });
+    </script>
+  </body>
+</html>
